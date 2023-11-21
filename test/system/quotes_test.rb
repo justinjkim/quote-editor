@@ -3,7 +3,9 @@ require "application_system_test_case"
 class QuotesTest < ApplicationSystemTestCase
   # I wonder if the setup block is like Rspec's "before" block?
   setup do
-    @quote = quotes(:first) # Reference to the first fixture quote
+    # somehow, the quotes() method knows to reference the `fixtures`
+    # method in the `test_helper.rb` file
+    @quote = quotes(:first)
   end
 
   test "Creating a new quote" do
