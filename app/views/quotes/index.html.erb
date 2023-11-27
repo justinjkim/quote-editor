@@ -1,20 +1,10 @@
 <main class="container">
-  <%#=
-    The below line will render this: <turbo-frame id="first-turbo-frame">
-
-    The turbo-frame HTML tag does not exist in the HTML language, but is
-    a custom element created in the Turbo JS library. It intercepts
-    form submissions and clicks on links within the frame, making these
-    frames independent pieces of the page.
-  %>
-  <%= turbo_frame_tag "first_turbo_frame" do %>
-    <div class="header">
-      <h1>Quotes</h1>
-      <%= link_to "New quote",
-                  new_quote_path,
-                  class: "btn btn--primary" %>
-    </div>
-  <% end %>
+  <div class="header">
+    <h1>Quotes</h1>
+    <%= link_to "New quote",
+                new_quote_path,
+                class: "btn btn--primary" %>
+  </div>
 
   <%= render @quotes %>
 </main>
