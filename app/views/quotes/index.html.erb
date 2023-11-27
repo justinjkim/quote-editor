@@ -3,8 +3,20 @@
     <h1>Quotes</h1>
     <%= link_to "New quote",
                 new_quote_path,
-                class: "btn btn--primary" %>
+                class: "btn btn--primary",
+                data: { turbo_frame: dom_id(Quote.new) }
+        # Because the turbo_frame_tag below is empty, we need to
+        # utilize the data_turbo_frame attribute to connect this
+        # link to the new quote form to the turbo frame below.
+        # Also, because this link now has Turbo, when a user clicks
+        # on this link, Turbo will turn this request into AJAX and
+        # will look for a frame id of 'new_quote'. When the server
+        # responds with HTML associated with the #new partial, Turbo
+        # will extract just the turbo frame with the id of 'new_quote'
+        # and render it in the place of the turbo frame below!
+    %>
   </div>
 
+  <%= turbo_frame_tag Quote.new %>
   <%= render @quotes %>
 </main>

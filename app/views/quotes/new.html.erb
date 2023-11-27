@@ -5,5 +5,14 @@
     <h1>New quote</h1>
   </div>
 
-  <%= render "form", quote: @quote %>
+  <%#=
+    On this 'new' partial, the 'turbo_frame_tag @quote' is the same
+    as 'turbo_frame_tag "new_quote"'. When a user clicks on the "New Quote"
+    link on the index page, the server will render this partial in response,
+    but Turbo will extract just the frame below and render it on the target
+    page, which in this case, is back on the index page!
+  %>
+  <%= turbo_frame_tag @quote do %>
+    <%= render "form", quote: @quote %>
+  <% end %> %>
 </main>
