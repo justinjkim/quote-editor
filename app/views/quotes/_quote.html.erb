@@ -1,4 +1,4 @@
-<%= turbo_frame_tag "quote_#{quote.id}" do %>
+<%= turbo_frame_tag(quote) do %>
   <div class="quote">
     <%= link_to quote.name, quote_path(quote) %>
     <div class="quote__actions">
