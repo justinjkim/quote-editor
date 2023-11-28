@@ -3,9 +3,20 @@
 # This model initially had no columns defined. If you add columns to the
 # model remove the "{}" from the fixture names and add the columns immediately
 # below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+
+# Devise stores the `encrypted_password` field in the `users` table for
+# security reasons. If we want our fixtures to have the string "password"
+# as the actual password, we need to use the same method the Devise gem
+# would use to encrypt the password in our fixtures, hence the need to
+# use Devise::Encryptor.digest
+accountant:
+  email: accountant@kpmg.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+manager:
+  email: manager@kpmg.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
+
+eavesdropper:
+  email: eavesdropper@pwc.com
+  encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
