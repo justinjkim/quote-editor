@@ -1,3 +1,10 @@
+<%#=
+    I believe when a user clicks on the "Cancel" button when editing a quote,
+    then the server redirects the user to the #index page. Because this
+    _quote.html.erb partial contains the HTML for this given quote, it'll
+    replace the edit form that the user had opened before canceling...
+    In this case, the turbo_frame below is the "target" page.
+%>
 <%= turbo_frame_tag(quote) do %>
   <div class="quote">
     <%= link_to quote.name,
