@@ -1,0 +1,16 @@
+<%#=
+  The line below tells Turbo to prepend the turbo_frame with id "quotes"
+  the _quote.html.erb partial.
+  The "@quote" that follows is equivalent to the following expression:
+    render partial: "quotes/quote", locals: { quote: @quote }
+%>
+<%= turbo_stream.prepend "quotes", @quote %>
+
+<%#=
+  Meanwhile, the line below tells Turbo to update the turbo frame with
+  id "new_quote" with empty content. This is because after we create a
+  new quote, we want to render the 'new_quote' frame as empty. Otherwise,
+  we'll always see a form to create a new quote after we submit the form
+  to create a quote.
+%>
+<%= turbo_stream.update Quote.new, "" %>
