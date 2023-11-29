@@ -4,12 +4,14 @@
 @import "mixins/media";
 
 // Configuration
+@import "config/animations";
 @import "config/variables";
 @import "config/reset";
 
 // Components
 @import "components/btn";
 @import "components/error_message";
+@import "components/flash";
 @import "components/form";
 @import "components/navbar";
 @import "components/turbo_progress_bar";
