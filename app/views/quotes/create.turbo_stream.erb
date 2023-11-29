@@ -14,3 +14,5 @@
   to create a quote.
 %>
 <%= turbo_stream.update Quote.new, "" %>
+
+<%= turbo_stream.prepend "flash", partial: "layouts/flash" %>
