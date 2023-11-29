@@ -9,17 +9,17 @@
 # as the actual password, we need to use the same method the Devise gem
 # would use to encrypt the password in our fixtures, hence the need to
 # use Devise::Encryptor.digest
-accountant:
-  company: kpmg
-  email: accountant@kpmg.com
+joe:
+  company: basecamp
+  email: joe@basecamp.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
-manager:
-  company: kpmg
-  email: manager@kpmg.com
+jane:
+  company: basecamp
+  email: jane@basecamp.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
 
-eavesdropper:
-  company: pwc
-  email: eavesdropper@pwc.com
+cruella:
+  company: evil
+  email: cruella@evil.com
   encrypted_password: <%= Devise::Encryptor.digest(User, 'password') %>
