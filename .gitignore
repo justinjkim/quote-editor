@@ -38,3 +38,6 @@
 # Ignore Rubymine
 /.idea
 /.idea/*
+
+# Ignore .env
+/.env
