@@ -19,10 +19,16 @@
       <%= button_to "Delete",
                     quote_path(quote),
                     method: :delete,
-                    class: "btn btn--light" %>
+                    class: "btn btn--light"
+      %>
       <%= link_to "Edit",
                   edit_quote_path(quote),
-                  class: "btn btn--light" %>
+                  class: "btn btn--light"
+      %>
+      <%= link_to "Find Author",
+                  "#",
+                  class: "btn btn--light"
+      %>
     </div>
   </div>
 <% end %>
