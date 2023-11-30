@@ -5,10 +5,10 @@
     replace the edit form that the user had opened before canceling...
     In this case, the turbo_frame below is the "target" page.
 %>
-<%= turbo_frame_tag(quote) do %>
+<%= turbo_frame_tag(quote.turbo_frame_tag_id) do %>
   <div class="quote">
     <%= link_to quote.name,
-                quote_path(quote),
+                quote.quote_path,
                 data: { turbo_frame: "_top" }
         # The reason we need to utilize the data_turbo_frame attribute
         # is that each quote is nested under an already existing
@@ -17,12 +17,20 @@
     %>
     <div class="quote__actions">
       <%= button_to "Delete",
-                    quote_path(quote),
+                    quote.quote_path,
                     method: :delete,
-                    class: "btn btn--light" %>
+                    class: "btn btn--light"
+      %>
       <%= link_to "Edit",
-                  edit_quote_path(quote),
-                  class: "btn btn--light" %>
+                  quote.edit_quote_path,
+                  class: "btn btn--light"
+      %>
+      <%= link_to "Find Author",
+                    quote.find_author,
+                    class: "btn btn--light"
+      %>
     </div>
+    <turbo-frame id="response-frame">
+    </turbo-frame>
   </div>
 <% end %>

@@ -2,7 +2,15 @@ class QuotesController < ApplicationController
   before_action :set_quote, only: [:show, :edit, :update, :destroy]
 
   def index
-    @quotes = current_company.quotes.ordered
+    # @quotes = current_company.quotes.ordered
+    
+    outcome = Quotes::Index.run(company: current_company)
+    
+    if outcome.valid?
+      @view = outcome.view
+    else
+      render 404
+    end
   end
 
   def show
@@ -17,7 +25,7 @@ class QuotesController < ApplicationController
 
     if @quote.save
       respond_to do |format|
-        format.turbo_stream { flash.now[:notice] = "Quote was successfully created." }
+        format.turbo_stream
         format.html { redirect_to quotes_path, notice: "Quote was successfully created." }
       end
     else

@@ -25,6 +25,7 @@
   <%= turbo_frame_tag Quote.new %>
 
   <%= turbo_frame_tag "quotes" do %>
-    <%= render @quotes %>
+    <%# render @view.quotes %>
+    <%= render partial: 'quotes/quote', collection: @view.quotes, as: :quote %>
   <% end %>
 </main>

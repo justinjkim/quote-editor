@@ -13,9 +13,10 @@
   <body>
     <%= render "layouts/navbar" %>
 
-    <div id="flash" class="flash">
-      <%= render "layouts/flash" %>
-    </div>
+    <!-- We don't care about flash messages for now -->
+    <!--    <div id="flash" class="flash">-->
+          <%#= render "layouts/flash" %>
+    <!--    </div>-->
 
     <%= yield %>
   </body>
