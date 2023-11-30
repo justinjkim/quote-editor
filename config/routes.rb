@@ -4,5 +4,9 @@ Rails.application.routes.draw do
 
   root to: "pages#home"
 
-  resources :quotes # this will create the seven CRUD routes
+  resources :quotes do
+    member do
+      get "find_author"
+    end
+  end
 end
