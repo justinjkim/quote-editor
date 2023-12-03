@@ -5,7 +5,11 @@
     <h1>Edit quote</h1>
   </div>
 
-  <%= turbo_frame_tag(@quote) do %>
-    <%= render "form", quote: @quote %>
-  <% end %>
+  <%#=
+    Turbo frame that originally included the form partial below has now
+    been added instead INSIDE the form, for the purposes of returning
+    just the form content within the turbo frame tag, instead of returning
+    the entire edit partial.
+  %>
+  <%= render "form", quote: @quote %>
 </main>
