@@ -1,2 +1,1 @@
-<% binding.pry %>
-<%= turbo_stream.replace "ai_response_for_#{@quote.id}", @ai_response %>
+<%= turbo_stream.append "quotes", @ai_response %>
