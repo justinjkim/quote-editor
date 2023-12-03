@@ -16,20 +16,12 @@
         # a different page.
     %>
     <div class="quote__actions">
-      <%= button_to "Delete",
-                    quote_path(quote),
-                    method: :delete,
-                    class: "btn btn--light" %>
       <%= link_to "Edit",
                   edit_quote_path(quote),
                   class: "btn btn--light" %>
-      <div data-controller="ai">
-        <%= link_to "Find Author",
-                    find_author_quote_path(quote),
-                    data: { turbo_frame: "ai_response" },
-                    class: "btn btn--light" %>
-      </div>
+      <%= link_to "Find Author",
+                  find_author_quote_path(quote),
+                  class: "btn btn--light" %>
     </div>
-    <%= turbo_frame_tag "ai_response_for_#{quote.id}" %>
   </div>
 <% end %>
