@@ -26,6 +26,7 @@ class QuotesController < ApplicationController
   end
 
   def edit
+    render partial: "form", locals: { quote: @quote }
   end
 
   def update
