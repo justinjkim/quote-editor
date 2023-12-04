@@ -8,12 +8,7 @@
 <%= turbo_frame_tag(quote) do %>
   <div class="quote">
     <%= link_to quote.name,
-                quote_path(quote),
-                data: { turbo_frame: "_top" }
-        # The reason we need to utilize the data_turbo_frame attribute
-        # is that each quote is nested under an already existing
-        # turbo_frame_tag, so this data_turbo_frame helps us to target
-        # a different page.
+                edit_quote_path(quote)
     %>
     <div class="quote__actions">
       <%= link_to "Edit",
