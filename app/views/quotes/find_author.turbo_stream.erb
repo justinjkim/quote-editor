@@ -1,1 +1,3 @@
-<%= turbo_stream.replace "ai_response", @ai_response %>
+<%= turbo_frame_tag @quote do %>
+  <%= turbo_stream.update "ai_response", @ai_response %>
+<% end %>
