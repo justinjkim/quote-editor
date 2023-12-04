@@ -79,7 +79,7 @@ class QuotesController < ApplicationController
 
     respond_to do |format|
       format.html do
-        render turbo_stream: turbo_stream.replace("ai_response", @ai_response)
+        render "quotes/find_author", formats: [:turbo_stream]
       end
     end
   end
