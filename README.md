@@ -5,6 +5,10 @@ I created this Rails 7 app in the hopes of familiarizing myself with Hotwire, as
 
 I am using the excellent [hotrails.dev](https://www.hotrails.dev/turbo-rails) tutorial to build a simple quote editor.AI technology. However, I stopped following the tutorial around the half-way point because I wanted to change things up and incorporate API calls to [openAI's endpoints](https://platform.openai.com/docs/overview). Essentially, I want a user to input a quote they may have heard, and the openAI endpoint will return a response, guessing the author of the quote, as well as giving a fun fact about the author.
 
+![quote-author](https://github.com/justinjkim/quote-editor/assets/15473295/9e1dfb5a-0230-4848-bfd1-8dec48140e9d)
+
+
+
 ## Setup
 
 | Dependencies | Version     |
