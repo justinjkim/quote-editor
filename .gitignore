@@ -41,3 +41,6 @@
 
 # Ignore .env
 /.env
+
+# Ignore byebug
+/.byebug_history
