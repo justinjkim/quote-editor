@@ -7,6 +7,14 @@ RSpec.describe Quotes::FindAuthor do
   let!(:quote1) { Quote.create!(name: "test", company: company1) }
   let(:client_response1) { Hash.new }
 
+  context "self" do
+    it "knows its properties" do
+      expect(subject::OPENAI_MODEL).to eq("gpt-3.5-turbo")
+      expect(subject::OPENAI_USER_ROLE).to eq("user")
+      expect(subject::OPENAI_SYSTEM_ROLE).to eq("system")
+    end
+  end
+
   context "instance" do
     before do
       allow_any_instance_of(OpenAI::Client).to receive(:chat).and_return(client_response1)
