@@ -1,0 +1,8 @@
+.intro-text {
+  margin-top: var(--space-s);
+  margin-bottom: var(--space-s);
+
+  @include media(tabletAndUp) {
+    margin-bottom: var(--space-l);
+  }
+}
