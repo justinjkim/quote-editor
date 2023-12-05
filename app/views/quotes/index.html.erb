@@ -3,6 +3,7 @@
 <main class="container">
   <div class="header">
     <h1>Quote Finder</h1>
+    <%#= For now, I will not implement this "New quote" functionality %>
     <%#= link_to "New quote",
                 new_quote_path,
                 class: "btn btn--primary",
@@ -17,6 +18,21 @@
         # will extract just the turbo frame with the id of 'new_quote'
         # and render it in the place of the turbo frame below!
     %>
+  </div>
+  <div>
+    <p class="intro-text">
+      Ever have that urge to figure out who said a certain quote, but you have no idea who said it?
+    </p>
+    <p class="intro-text">
+      Rejoice! For the handy quote editor will help you figure out the author of your quote, even if you're not
+      able to remember the exact wording!
+    </p>
+    <p class="intro-text">
+      To get started, click on the <b>Find Author</b> button for your
+      quote and wait a few seconds for the helpful AI to pinpoint who may
+      be the author of your particular quote. Feel free to edit the quote
+      and find the author of your new quote!
+    </p>
   </div>
 
   <%= render @quotes %>
