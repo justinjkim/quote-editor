@@ -18,6 +18,7 @@ I am using the excellent [hotrails.dev](https://www.hotrails.dev/turbo-rails) tu
 | Bundler      | 2.3.7       |
 | turbo-rails  | 1.5.0       |
 | dotenv-rails | 2.8.1       |
+| ruby-openai  | 6.3.0       |
 
 ### OpenAI Client
 I have set up the `config/initializers/openai.rb` initializer, which uses my personal openAI access token and organization ID values from my `.env` file. To play with the editor on your own localhost, create your own `.env` file at the root directly and input your access token there, like so:
