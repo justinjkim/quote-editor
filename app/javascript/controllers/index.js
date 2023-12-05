@@ -7,5 +7,5 @@ import { application } from "./application"
 import RemovalsController from "./removals_controller"
 application.register("removals", RemovalsController)
 
-import AiController from "./ai_controller"
-application.register("ai", AiController)
+import ButtonController from "./button_controller"
+application.register("button", ButtonController)

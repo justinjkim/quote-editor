@@ -18,8 +18,10 @@
   </div>
 <% end %>
 
-<%= turbo_frame_tag "find_author" do %>
-  <%= link_to "Find Author",
+<%= turbo_frame_tag "find_author", data: { controller: "button" } do %>
+  <%= button_to "Find Author",
               find_author_quote_path(quote),
-              class: "btn btn--primary" %>
+              method: :get,
+              class: "btn btn--primary",
+              data: { action: "click->button#disable", button_target: "button" } %>
 <% end %>
