@@ -63,6 +63,8 @@ gem "devise", "~> 4.8.1"
 
 gem "ruby-openai"
 
+gem 'active_interaction', '~> 5.3'
+
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
